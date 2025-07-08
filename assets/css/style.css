@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Press Start 2P';
+  background: linear-gradient(to right top, #221c55, #403a80, #221c55);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f8f8f8;
+}
+
+.game-title {
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.game-card {
+  background: #2f2f46;
+  border: 3px solid #6161ff94;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #d1d1fa59;
+  padding: 30px;
+  width: 350px;
+  text-align: center;
+}
+
+#img {
+  height: 150px;
+  padding: 70px 0 50px 0;
+  filter: drop-shadow(2px 2px 5px #000000);
+
+}
+
+.form {
+  margin: 20px
+}
+
+#guessInput {
+  padding: 10px;
+  width: 90%;
+  border: 2px solid #ab93d85d;
+  border-radius: 10px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  font-family: 'Press Start 2P';
+}
+
+#guessInput:focus {
+    outline: none;
+}
+
+#guessBtn {
+  margin: 25px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: #6a71d6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 5px #6c87ff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: 'Press Start 2P';
+}
+
+#guessBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #82b1ff;
+}
+
+#message {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #fff176;
+  text-shadow: 1px 1px black;
+}
+
+.score-replay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+#replayBtn {
+  padding: 8px 16px;
+  background-color: #6a71d6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: bold;
+  box-shadow: 0 0 5px #6c87ff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#replayBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #82b1ff;
+}
