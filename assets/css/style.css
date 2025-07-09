@@ -32,11 +32,14 @@ body {
 }
 
 #img {
-  height: 150px;
+  height: 130px;
   padding: 70px 0 50px 0;
-  filter: drop-shadow(2px 2px 5px #000000);
-
 }
+
+.hide {
+  filter: brightness(0%);
+}
+
 
 .form {
   margin: 20px
@@ -89,6 +92,7 @@ body {
   align-items: center;
   font-size: 12px;
   margin-top: 20px;
+  padding-top: 10px;
 }
 
 #replayBtn {

@@ -35,6 +35,7 @@ function guessPkmn() {
     if (userGuess === pkmn.name) {
         console.log("gagné");
         message.textContent = "Gagné !";
+        document.querySelector('#img').classList.remove('hide')
         score++;
         scoreContainer.textContent = score
         const pkmnCry = pkmn.cries.latest
@@ -56,7 +57,8 @@ guessInput.addEventListener("keypress", function (event) {
 });
 
 replayBtn.addEventListener("click", () => {
-    displayPkmn();              
-    guessInput.value = "";      
-    message.textContent = ""; 
+    displayPkmn();
+    document.querySelector('#img').classList.add('hide')
+    guessInput.value = "";
+    message.textContent = "";
 });
