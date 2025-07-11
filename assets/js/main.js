@@ -55,9 +55,9 @@ function levenshtein(a, b) {
         for (let j = 1; j <= b.length; j++) {
             const cost = a[i - 1] === b[j - 1] ? 0 : 1;
             matrix[i][j] = Math.min(
-                matrix[i - 1][j] + 1,     
+                matrix[i - 1][j] + 1,
                 matrix[i][j - 1] + 1,
-                matrix[i - 1][j - 1] + cost 
+                matrix[i - 1][j - 1] + cost
             );
         }
     }
@@ -69,7 +69,7 @@ function guessPkmn() {
     const distance = levenshtein(userGuess, pkmn.frName);
     if (distance <= 1) { // ajuster la distance ici afin d'ajuster la permissivité des fautes de frappe.
         console.log("gagné");
-        message.innerHTML = `Gagné ! <br> C'était bien ${pkmn.frName}`;
+        message.innerHTML = `<span style="color: #e3ff7eff;">Gagné !<br>C'était bien ${pkmn.frName}</span>`;
         document.querySelector('#img').classList.remove('hide');
         score++;
         scoreContainer.textContent = score;
@@ -77,7 +77,7 @@ function guessPkmn() {
         const audio = new Audio(pkmnCry);
         audio.play();
     } else {
-        message.innerHTML = `Perdu ! <br> Le pokémon était ${pkmn.frName}`;
+        message.innerHTML = `<span style="color: #f3653aff;">Perdu !<br>Le pokémon était ${pkmn.frName}</span>`;
         document.querySelector('#img').classList.remove('hide');
     }
     guessBtn.textContent = "Rejouer";
@@ -107,9 +107,9 @@ guessInput.addEventListener("keypress", function (event) {
 easyModeBtn.addEventListener("change", () => {
     easyMode = easyModeBtn.checked;
 
-        if (easyMode) {
-            document.querySelector('#img').classList.remove('hide');
-        } else {
-            document.querySelector('#img').classList.add('hide');
-        }
+    if (easyMode) {
+        document.querySelector('#img').classList.remove('hide');
+    } else {
+        document.querySelector('#img').classList.add('hide');
+    }
 });

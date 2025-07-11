@@ -40,7 +40,6 @@ body {
   filter: brightness(0%);
 }
 
-
 .form {
   margin: 20px
 }
@@ -84,7 +83,7 @@ body {
   margin: 0;
   line-height: 18px;
   font-size: 14px;
-  color: #fff176;
+  color: #fff27e;
   text-shadow: 1px 1px black;
 }
 
