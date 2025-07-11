@@ -3,10 +3,12 @@ let guessBtn = document.querySelector('#guessBtn');
 let guessInput = document.querySelector('#guessInput');
 let message = document.querySelector('#message');
 let scoreContainer = document.querySelector('#scoreContainer');
+let easyModeBtn = document.querySelector('#easyModeBtn'); // ajout
 let score = 0;
 let pkmn = null;
 let userGuess = null;
 let isReplay = false;
+let easyMode = false;
 
 function randomize(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -29,15 +31,21 @@ async function randomPkmn() {
 }
 
 async function displayPkmn() {
+    easyMode = easyModeBtn.checked;
     pkmn = await randomPkmn();
     const pkmnImg = pkmn.sprites.other.showdown.front_default;
     document.querySelector('#img').src = pkmnImg;
+    if (!easyMode) {
+        document.querySelector('#img').classList.add('hide');
+    } else {
+        document.querySelector('#img').classList.remove('hide');
+    }
 }
 
 displayPkmn();
 
 // DISTANCE DE LEVENSHTEIN (Algo super cool qui permet d'autoriser les légères fautes de frappes de l'utilisateur)
-function levenshtein(a, b) { 
+function levenshtein(a, b) {
     const matrix = Array.from({ length: a.length + 1 }, (_, i) =>
         Array.from({ length: b.length + 1 }, (_, j) =>
             i === 0 ? j : j === 0 ? i : 0
@@ -59,7 +67,7 @@ function levenshtein(a, b) {
 function guessPkmn() {
     userGuess = guessInput.value.toLowerCase();
     const distance = levenshtein(userGuess, pkmn.frName);
-    if (distance <= 2) { // ajuster la distance ici afin d'ajuster la permissivité des fautes de frappe.
+    if (distance <= 1) { // ajuster la distance ici afin d'ajuster la permissivité des fautes de frappe.
         console.log("gagné");
         message.innerHTML = `Gagné ! <br> C'était bien ${pkmn.frName}`;
         document.querySelector('#img').classList.remove('hide');
@@ -93,4 +101,15 @@ guessInput.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         guessBtn.click();
     }
+});
+
+// MODE FACILE 
+easyModeBtn.addEventListener("change", () => {
+    easyMode = easyModeBtn.checked;
+
+        if (easyMode) {
+            document.querySelector('#img').classList.remove('hide');
+        } else {
+            document.querySelector('#img').classList.add('hide');
+        }
 });

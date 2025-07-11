@@ -26,7 +26,7 @@ body {
   border: 3px solid #6161ff94;
   border-radius: 20px;
   box-shadow: 0 0 10px #d1d1fa59;
-  padding: 30px;
+  padding: 30px 30px 20px 30px;
   width: 350px;
   text-align: center;
 }
@@ -92,7 +92,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 #replayBtn {
@@ -111,4 +111,13 @@ body {
 #replayBtn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 12px #82b1ff;
+}
+
+#easyModeContainer label, #easyModeBtn{
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#easyModeContainer {
+  padding-top: 20px;
 }

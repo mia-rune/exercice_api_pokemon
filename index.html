@@ -9,21 +9,26 @@
 </head>
 
 <body>
-<main class="game-container">
-    <section class="game-card">
-        <h2 class="game-title">Quel est ce pokémon ?</h2>
-        <img class="hide" id="img"  alt="pokémon mystère"></img>
-        <div class="form">
-            <input id="guessInput" type="text" placeholder="Nom du pokémon">
-        </div>
-        <p id="message"></p>
-        <div class="score-replay">
-            <p>Score : <span id="scoreContainer">0</span></p>
-                        <button id="guessBtn">Envoyer</button>
-
-        </div>
-    </section>
-</main>
+    <main class="game-container">
+        <section class="game-card">
+            <h2 class="game-title">Quel est ce pokémon ?</h2>
+            <img class="hide" id="img" alt="pokémon mystère"></img>
+            <div class="form">
+                <input id="guessInput" type="text" placeholder="Nom du pokémon">
+            </div>
+            <p id="message"></p>
+            <div class="score-replay">
+                <p>Score : <span id="scoreContainer">0</span></p>
+                <button id="guessBtn">Envoyer</button>
+            </div>
+            <div id="easyModeContainer">
+                <label for="easyModeBtn">
+                    <input type="checkbox" id="easyModeBtn">
+                    Mode facile
+                </label>
+            </div>
+        </section>
+    </main>
 
     <script src="./assets/js/main.js"></script>
 </body>
